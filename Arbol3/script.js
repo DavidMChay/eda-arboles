@@ -44,57 +44,62 @@ class Arbol {
     }
 }
 
-// Crear un árbol específico
-let root = new Nodo(55);
-let n1 = new Nodo(53);
-let n2 = new Nodo(59);
-let n3 = new Nodo(48);
-let n4 = new Nodo(54);
-let n5 = new Nodo(56);
-let n6 = new Nodo(63);
-let n7 = new Nodo(51);
-let n8 = new Nodo(57);
-let n9 = new Nodo(61);
-let n10 = new Nodo(70);
+// Crear el árbol con los nodos y sus relaciones
+let f = new Nodo('55');
+let b = new Nodo('53');
+let g = new Nodo('59');
+let a = new Nodo('48');
+let d = new Nodo('54');
+let c = new Nodo('51');
+let e = new Nodo('56');
+let i = new Nodo('63');
+let h = new Nodo('57');
+let j = new Nodo('61');
+let k = new Nodo('70');
 
-root.izquierdo = n1;
-root.derecho = n2;
-n1.izquierdo = n3;
-n1.derecho = n4;
-n2.izquierdo = n5;
-n2.derecho = n6;
-n3.derecho = n7;
-n5.derecho = n8;
-n6.izquierdo = n9;
-n6.derecho = n10;
+f.izquierdo = b;
+f.derecho = g;
 
-let arbol = new Arbol(root);
+b.izquierdo = a;
+b.derecho = d;
+
+a.derecho = c;
+
+g.izquierdo = e;
+g.derecho = i;
+
+e.derecho = h;
+
+i.izquierdo = j;
+i.derecho = k;
+
+let arbol = new Arbol(f);
 
 // Función para mostrar el árbol visualmente
 function mostrarArbol() {
     $('#arbol').html(`
         <div class="level">
-            <div class="node">${root.valor}</div>
+            <div class="node">${f.valor}</div>
         </div>
         <div class="level">
-            <div class="node">${n1.valor}</div>
-            <div class="node">${n2.valor}</div>
+            <div class="node">${b.valor}</div>
+            <div class="node">${g.valor}</div>
         </div>
         <div class="level">
-            <div class="node">${n3.valor}</div>
-            <div class="node">${n4.valor}</div>
+            <div class="node">${a.valor}</div>
+            <div class="node">${d.valor}</div>
         </div>
         <div class="level">
-            <div class="node">${n5.valor}</div>
-            <div class="node">${n6.valor}</div>
+            <div class="node">${c.valor}</div>
         </div>
         <div class="level">
-            <div class="node">${n7.valor}</div>
-            <div class="node">${n8.valor}</div>
+            <div class="node">${e.valor}</div>
+            <div class="node">${i.valor}</div>
         </div>
         <div class="level">
-            <div class="node">${n9.valor}</div>
-            <div class="node">${n10.valor}</div>
+            <div class="node">${h.valor}</div>
+            <div class="node">${j.valor}</div>
+            <div class="node">${k.valor}</div>
         </div>
     `);
 }

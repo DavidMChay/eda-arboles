@@ -44,23 +44,27 @@ class Arbol {
     }
 }
 
-// Crear un árbol específico
+// Crear el árbol con los nodos y sus relaciones
 let f = new Nodo('F');
 let b = new Nodo('B');
 let g = new Nodo('G');
 let a = new Nodo('A');
 let d = new Nodo('D');
-let i = new Nodo('I');
 let c = new Nodo('C');
 let e = new Nodo('E');
+let i = new Nodo('I');
 let h = new Nodo('H');
+
 f.izquierdo = b;
 f.derecho = g;
+
 b.izquierdo = a;
 b.derecho = d;
-g.izquierdo = c;
+
+d.izquierdo = c;
+d.derecho = e;
+
 g.derecho = i;
-d.izquierdo = e;
 i.izquierdo = h;
 
 let arbol = new Arbol(f);
@@ -68,23 +72,27 @@ let arbol = new Arbol(f);
 // Función para mostrar el árbol visualmente
 function mostrarArbol() {
     $('#arbol').html(`
-        <div class="node">${f.valor}</div><br>
-        <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <div class="level">
+            <div class="node">${f.valor}</div>
+        </div>
+        <div class="level">
             <div class="node">${b.valor}</div>
             <div class="node">${g.valor}</div>
-        </div><br>
-        <div style="display: flex; justify-content: center; margin-top: 10px;">
+        </div>
+        <div class="level">
             <div class="node">${a.valor}</div>
             <div class="node">${d.valor}</div>
-        </div><br>
-        <div style="display: flex; justify-content: center; margin-top: 10px;">
+        </div>
+        <div class="level">
             <div class="node">${c.valor}</div>
-            <div class="node">${i.valor}</div>
-        </div><br>
-        <div style="display: flex; justify-content: center; margin-top: 10px;">
             <div class="node">${e.valor}</div>
+        </div>
+        <div class="level">
+            <div class="node">${i.valor}</div>
+        </div>
+        <div class="level">
             <div class="node">${h.valor}</div>
-        </div><br>
+        </div>
     `);
 }
 

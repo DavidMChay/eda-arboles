@@ -44,27 +44,32 @@ class Arbol {
     }
 }
 
-// Crear un árbol específico
-let h = new Nodo('h');
+// Crear el árbol con los nodos y sus relaciones
+let h = new Nodo('H');
 let i = new Nodo('i');
 let m = new Nodo('m');
 let e = new Nodo('e');
 let a = new Nodo('a');
+
 h.izquierdo = i;
 h.derecho = m;
-i.izquierdo = e;
+
+i.derecho = e;
 m.izquierdo = a;
+
 let arbol = new Arbol(h);
 
 // Función para mostrar el árbol visualmente
 function mostrarArbol() {
     $('#arbol').html(`
-        <div class="node">${h.valor}</div><br>
-        <div style="display: flex; justify-content: center; margin-top: 10px;">
+        <div class="level">
+            <div class="node">${h.valor}</div>
+        </div>
+        <div class="level">
             <div class="node">${i.valor}</div>
             <div class="node">${m.valor}</div>
-        </div><br>
-        <div style="display: flex; justify-content: center; margin-top: 10px;">
+        </div>
+        <div class="level">
             <div class="node">${e.valor}</div>
             <div class="node">${a.valor}</div>
         </div>

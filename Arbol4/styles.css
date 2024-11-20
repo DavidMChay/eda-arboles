@@ -42,3 +42,12 @@ h1 {
 .level > .node {
     margin: 0 15px;
 }
+
+#resultado {
+    max-width: 100%;
+    max-height: 200px; /* Altura limitada para evitar que ocupe toda la página */
+    overflow-y: auto; /* Permite que el texto se desplace si es demasiado largo */
+    word-wrap: break-word; /* Hace que el texto largo se ajuste al contenedor */
+    font-size: 18px;
+    color: #333;
+}
